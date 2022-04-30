@@ -7,16 +7,27 @@ public class Indivisual extends Borrower {
 	private int Age;
 	private String PhoneNumber;
 	
-	ArrayList BorrowingBooks = new ArrayList();
-	
-	void loanBook(int Book_Num)
-	{
-		this.BorrowingBooks.add(Book_Num);
+	public void setGrade(int Grade) {
+		this.Grade = Grade;
 	}
 	
-	void returnBook(int Book_Num)
-	{
-		this.BorrowingBooks.remove(BorrowingBooks.indexOf(Book_Num));
-		//Ãß°¡ : Book ¹Ý³³ 
+	public int getGrade() {
+		return this.Grade;
+	}
+	
+	public void setAge(int Age) {
+		this.Age = Age;
+	}
+	
+	public int getAge() {
+		return this.Age;
+	}
+	
+	public void setPhoneNumber(String PhoneNumber) {
+		this.PhoneNumber = PhoneNumber;
+	}
+	
+	public String getPhoneNumber() {
+		return this.PhoneNumber;
 	}
 }
