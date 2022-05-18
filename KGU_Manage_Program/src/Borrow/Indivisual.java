@@ -1,6 +1,6 @@
-package Borrow;
-
-import java.util.ArrayList;
+package Borrow;/*
+				
+				import java.util.ArrayList;*/
 
 public class Indivisual extends Borrower {
 	private int Grade;

@@ -1,4 +1,4 @@
-package managementProgram;
+package Object;
 
 abstract class Manage_Program{
 	

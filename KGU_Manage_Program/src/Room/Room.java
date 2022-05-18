@@ -1,4 +1,4 @@
-package RoomPackage;
+package Room;
 
 public class Room{
 	int maxStudent;
@@ -77,7 +77,6 @@ public class Room{
 		
 		if(score>=80) {
 			return "Suitable";
-			// or "에어컨은 " + ac + "개 이고.... 
 		}
 		else {
 			return "Unsuitable";
