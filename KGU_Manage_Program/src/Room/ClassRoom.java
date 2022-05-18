@@ -1,4 +1,4 @@
-package RoomPackage;
+package Room;
 
 public class ClassRoom extends Room{
 	
@@ -31,10 +31,9 @@ public class ClassRoom extends Room{
 	}
 	
 	
-	int[][] timeTable = new int[9][7];
-	for(int i = 0;i<=timeTable.length;i++) {
-		
-	}
-	
-
+	/*
+	 * int[][] timeTable = new int[9][7];
+	 * for(int i = 0;i<=timeTable.length;i++) { ;
+	 * }
+	 */
 }

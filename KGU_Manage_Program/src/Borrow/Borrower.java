@@ -1,7 +1,5 @@
 package Borrow;
 
-import java.util.ArrayList;
-
 public class Borrower {
 
 	private String Name;
@@ -9,7 +7,7 @@ public class Borrower {
 	
 	public Borrower()
 	{
-		BorrowManager manager = new BorrowManager();
+		/* BorrowManager manager = new BorrowManager(); */
 	}
 	
 	public void setName(String Name) {

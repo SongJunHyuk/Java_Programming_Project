@@ -1,4 +1,7 @@
+import Borrow.Borrower;
+import UI.MainPage;
 
+/*
 class Room {
   int MaxStudent; // 방이 수용 가능한 최대 인원수
   
@@ -36,14 +39,16 @@ class MeetingRoom extends Room{
 		System.out.println("강의실 번호 : " + MeetingRoomName);
 	}
 	
-}
-
-public class Main {
-
-	public static void main(String[] args) {
+}*/
+/*{
 		MeetingRoom R = new MeetingRoom("8002A");
 		R.SetMaxStudent(50);
 		R.ShowRoomName(); R.ShowMax();
-	}
+	}*/
 
+public class Start {
+
+	public static void main(String[] args) {
+		MainPage.FirstStep();
+	}
 }
