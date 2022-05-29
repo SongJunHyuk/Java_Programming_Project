@@ -1,4 +1,5 @@
 import Borrow.Borrower;
+import Data.Dataset;
 import UI.MainPage;
 
 /*
@@ -49,6 +50,7 @@ class MeetingRoom extends Room{
 public class Start {
 
 	public static void main(String[] args) {
+		Dataset.insert_Data();
 		MainPage.FirstStep();
 	}
 }
