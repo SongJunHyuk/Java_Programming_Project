@@ -8,10 +8,8 @@ public class ClassRoom extends Room{
 	public ClassRoom() {}
 	
 	public ClassRoom(boolean havingComputer, boolean isUnderground) {
-		
 		this.havingComputer = havingComputer;
 		this.isUnderground = isUnderground;
-		
 	}
 	
 	public boolean getHavingComputer() {

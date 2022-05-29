@@ -23,7 +23,8 @@ public class Room{
 	public void setMaxStudent(int maxStudent) {
 		this.maxStudent = maxStudent;
 	}
-		public int getAirconditionCount() {
+	
+	public int getAirconditionCount() {
 		return airconditionCount;
 	}
 	
@@ -47,13 +48,13 @@ public class Room{
 		this.fanCount = fanCount;
 	}
 	
-	public void setAvaialble(boolean havingComputer){
+	public void getAvaialble(boolean havingComputer){
 		
 		System.out.println("available");
 	
 	}
 	
-	public void setUnavailable(boolean havingComputer) {
+	public void getUnavailable(boolean havingComputer) {
 		
 		System.out.println("unavailable");
 		
