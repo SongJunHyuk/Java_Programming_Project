@@ -7,7 +7,7 @@ public class MainPage {
 		Scanner sc = new Scanner(System.in);
 		System.out.println("-------------실행할 기능을 선택하세요-------------");
 		System.out.println("|                                          |");
-		System.out.println("| 0.종료      1. 조회      2.대여      3.반납  |");
+		System.out.println("| 0.종료      1. 조회      2.대여      3.반납   |");
 		System.out.println("|                                          |");
 		System.out.println("--------------------------------------------");
 		int N = sc.nextInt();

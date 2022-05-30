@@ -1,7 +1,5 @@
 package Borrow;
 
-import java.util.ArrayList;
-
 public class Group extends Borrower {
 	private int NumOfPeople;
 	private String RepresentativeName;

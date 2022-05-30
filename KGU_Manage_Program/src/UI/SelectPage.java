@@ -23,6 +23,7 @@ public class SelectPage {
 		}
 		sc.close();
 	}
+	
 	public static void selectPlace()
 	{
 		
@@ -32,7 +33,7 @@ public class SelectPage {
 	{
 		System.out.println("---------------조회할 것을 선택하세요-------------");
 		System.out.println("|                                          |");
-		System.out.println("|  0.뒤로가기     1. 교실        2.아고라(수정예정)|");
+		System.out.println("|  0.뒤로가기     1. 교실        2.룸(수정예정)   |");
 		System.out.println("|                                          |");
 		System.out.println("--------------------------------------------");
 		Scanner sc = new Scanner(System.in);
