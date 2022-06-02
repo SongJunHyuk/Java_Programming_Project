@@ -219,4 +219,8 @@ class Helmet extends Object{
 		return size;
 	}
 	
+<<<<<<< Updated upstream
 }
+=======
+}
+>>>>>>> Stashed changes
