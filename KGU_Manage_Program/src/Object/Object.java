@@ -58,6 +58,29 @@ public class Object {
         }
     }
     
+    public void showObjectList(){
+        while (true) {
+        	Scanner sc = new Scanner(System.in);
+            for (int i = 0; i < objectList.size(); i++) {
+                System.out.println("===============================");
+                System.out.println("물품명 : " + objectList.get(i).getobName());
+                System.out.println("수량  : " + objectList.get(i).getobQuantity());
+                System.out.println("대여가능 : " + objectList.get(i).isobAvailable());
+                System.out.println("===============================\n");
+ 
+            } 
+            System.out.println("초기 메뉴 이동 : [B]");
+            String temp = sc.nextLine();
+            sc.close();
+            if (temp.equalsIgnoreCase("b") || temp.equalsIgnoreCase("B")) {
+                break;
+            } else {
+                System.out.println("잘못 누르셨습니다. 초기화면으로 이동합니다.");
+                break; 
+            }
+        }
+    }
+    
     public void returnObject() {
     	
     }
@@ -134,12 +157,88 @@ class Books extends Object{
     private String bTitle;
     private String bAuthor;
     private String bGenre;
+    private Boolean bAvailable;
     private ArrayList<Books> bookList = new ArrayList<Books>();
  
     public Books() {
  
     }
+    
+    public void insertBook() {
+        while (true) {
+            Books book = new Books();
+            Scanner sc = new Scanner(System.in);
+            while (true) {
+            	int cnt=0;
+                System.out.println("도서 번호 입력");
+                String temp = sc.nextLine();
+                for (int i = 0; i < bookList.size(); i++) {
+                    if (temp.equals(bookList.get(i).getbNo())) {
+                        cnt++;
+                        System.out.println("도서 번호 중복입니다. 다시 입력하세요.");
+                        break;
+                    }
+                }
+                if(cnt==0) {
+                    book.setbNo(temp);
+                    break;
+                }
+            } 
+            System.out.println("책 제목 입력");
+            book.setbTitle(sc.nextLine());
+            System.out.println("작가 입력");
+            book.setbAuthor(sc.nextLine());
+            System.out.println("장르 입력");
+            book.setbGenre(sc.nextLine());
+            book.setbAvailable(true);
  
+            System.out.println("도서번호 : " + book.getbNo());
+            System.out.println("도서제목 : " + book.getbTitle());
+            System.out.println("지 은 이  : " + book.getbAuthor());
+            System.out.println("장     르  : " + book.getbGenre());
+            System.out.println("대여가능 : " + book.isbAvailable());
+ 
+            System.out.println("입력하신 사항이 모두 맞습니까? 예(Y) 아니오(N)");
+            String confirm = sc.nextLine();
+            if (confirm.equalsIgnoreCase("y") || confirm.equalsIgnoreCase("Y")) {
+                bookList.add(book);
+                System.out.println("======입력 완료=====");
+                break;
+            } else if (confirm.equalsIgnoreCase("n") || confirm.equalsIgnoreCase("N")) {
+                System.out.println("도서 정보를 새로 입력하세요.");
+            } else {
+                System.out.println("잘못 누르셨습니다. 초기 메뉴로 이동합니다");
+                break; 
+            }
+        }  
+    }
+    
+    public void showBookList() {
+        while (true) {
+            Scanner sc = new Scanner(System.in);
+        	System.out.println("보유 도서량:  " + bookList.size());
+            for (int i = 0; i < bookList.size(); i++) {
+                System.out.println("===============================");
+                System.out.println("책 번호 : " + bookList.get(i).getbNo());
+                System.out.println("책 제목 : " + bookList.get(i).getbTitle());
+                System.out.println("지은이  : " + bookList.get(i).getbAuthor());
+                System.out.println("장   르  : " + bookList.get(i).getbGenre());
+                System.out.println("대여가능 : " + bookList.get(i).isbAvailable());
+                System.out.println("===============================\n");
+            } 
+            System.out.println("초기 메뉴 이동 : [b] \t 프로그램 종료 : [0]");
+            String temp = sc.nextLine();
+            sc.close();
+            if (temp.equalsIgnoreCase("b")) {
+                break;
+            } 
+            else {
+                System.out.println("잘못 누르셨습니다. 초기화면으로 이동합니다.");
+                break; 
+            } 
+        } 
+    }
+    
     public String getbNo() {
         return bNo;
     }
@@ -171,9 +270,14 @@ class Books extends Object{
     public void setbGenre(String bGenre) {
         this.bGenre = bGenre;
     }
- 
+    
+    public void setbAvailable(Boolean bAvailable) {
+    	this.bAvailable = bAvailable;
+    }
+    public Boolean isbAvailable() {
+    	return bAvailable;
+    }
 }
-
 
 class Ball extends Object{
 	private static String type;
@@ -350,5 +454,5 @@ class Helmet extends Object{
 	public String getHelmetSize() {
 		return size;
 	}
-	
 }
+
