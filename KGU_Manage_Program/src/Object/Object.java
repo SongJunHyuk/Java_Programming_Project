@@ -455,4 +455,3 @@ class Helmet extends Object{
 		return size;
 	}
 }
-
