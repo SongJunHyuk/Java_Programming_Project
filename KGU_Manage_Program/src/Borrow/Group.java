@@ -1,21 +1,33 @@
 package Borrow;
 
-import java.util.ArrayList;
-
 public class Group extends Borrower {
 	private int NumOfPeople;
 	private String RepresentativeName;
-	
-	ArrayList BorrowingPlace = new ArrayList();
-	
-	public void BorrowPlace(int Place_Num)
+	public Group()
 	{
-		this.BorrowingPlace.add(Place_Num);
+		
+	}
+	public Group(String name, int num, String RepresentName) {
+		this.Name = name;
+		this.NumOfPeople = num;
+		this.RepresentativeName = RepresentName;
 	}
 	
-	public void returnPlace(int Place_Num)
-	{
-		this.BorrowingPlace.remove(BorrowingPlace.indexOf(Place_Num));
-		//Ãß°¡ : Place ¹Ý³³
+	public void setNumOfPeople (int NumOfPeople) {
+		this.NumOfPeople = NumOfPeople;
 	}
+	
+	public int getNumOfPeople () {
+		return this.NumOfPeople;
+	}
+	
+	public void setRepresentativeName(String RepresentativeName) {
+		this.RepresentativeName = RepresentativeName;
+	}
+	
+	public String getRepresentativeName() {
+		return this.RepresentativeName;
+	}
+	
+	
 }

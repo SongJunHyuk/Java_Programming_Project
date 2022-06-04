@@ -1,45 +1,28 @@
 package Borrow;
 
-import java.util.ArrayList;
-
 public class Borrower {
 
-	private String Name;
-	private String TemperaturePriorty;
-	ArrayList BorrowingThings = new ArrayList();
-	ArrayList BorrowingPlaces = new ArrayList();
+	protected String Name;
+	protected String TemperaturePriorty;
 	
-	public void rentClassRoom(int ClassRoom_Num)
+	public Borrower()
 	{
-		this.BorrowingPlaces.add(ClassRoom_Num);
+		/* BorrowManager manager = new BorrowManager(); */
 	}
 	
-	public void returnClassRoom(int ClassRoom_Num)
-	{
-		this.BorrowingPlaces.remove(BorrowingPlaces.indexOf(ClassRoom_Num));
-		//Ãß°¡ : ClassRoom ¹Ý³³ 
+	public void setName(String Name) {
+		this.Name = Name;
 	}
 	
-	public void rentMeetingRoom(int MeetingRoom_Num)
-	{
-		this.BorrowingPlaces.add(MeetingRoom_Num);
+	public String getName() {
+		return this.Name;
 	}
 	
-	public void returnMeetingRoomRoom(int MeetingRoom_Num)
-	{
-		this.BorrowingPlaces.remove(BorrowingPlaces.indexOf(MeetingRoom_Num));
-		//Ãß°¡ : MeetingRoom ¹Ý³³ 
+	public void setTemperaturePriorty(String TemperaturePriorty) {
+		this.TemperaturePriorty = TemperaturePriorty;
 	}
 	
-	public void borrowObject(int Object_Num)
-	{
-		this.BorrowingThings.add(Object_Num);
+	public String getTemperaturePriorty() {
+		return this.TemperaturePriorty;
 	}
-	
-	public void returnObject(int Object_Num)
-	{
-		this.BorrowingThings.remove(BorrowingThings.indexOf(Object_Num));
-		//Ãß°¡ : Object ¹Ý³³ 
-	}
-
 }
