@@ -1,11 +1,15 @@
 package UI;
 import java.util.Scanner;
+
+import Place.BasketBallCourt;
+import Place.Playground;
+
 public class SelectPage {
 	public static void Select() { // 조회 기능
 		Scanner sc = new Scanner(System.in);
 		System.out.println("---------------조회할 것을 선택하세요-------------");
 		System.out.println("|                                          |");
-		System.out.println("|0.뒤로가기      1.장소         2.교실     3.물건|");
+		System.out.println("| 0.뒤로가기     1.물건      2.장소      3.방    |");
 		System.out.println("|                                          |");
 		System.out.println("--------------------------------------------");
 		int N = sc.nextInt();
@@ -14,11 +18,11 @@ public class SelectPage {
 		switch (N) {
 		case 0: MainPage.FirstStep();
 			break;
-		case 1: selectPlace();
+		case 1: selectObject();
 			break;
-		case 2: selectRoom();
+		case 2:  selectPlace();
 			break;
-		case 3: selectObject();
+		case 3: selectRoom();
 			break;
 		}
 		sc.close();
@@ -26,7 +30,24 @@ public class SelectPage {
 	
 	public static void selectPlace()
 	{
+		Scanner sc = new Scanner(System.in);
+		System.out.println("--------------조회할 장소를 선택하세요------------");
+		System.out.println("|                                          |");
+		System.out.println("|0.뒤로가기     1.농구장          2.축구장       |");
+		System.out.println("|                                          |");
+		System.out.println("--------------------------------------------");
+		int N = sc.nextInt();
+		System.out.println();
 		
+		switch(N) {
+		case 0: Select();
+			break;
+		case 1: BasketBallCourt.getInstance().showTimeTable();
+			break;
+		case 2: Playground.getInstance().showTimeTable();
+			MainPage.FirstStep();
+			break;
+		}
 	}
 	
 	public static void selectRoom()

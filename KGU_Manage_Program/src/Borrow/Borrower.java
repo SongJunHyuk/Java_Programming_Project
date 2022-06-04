@@ -2,8 +2,8 @@ package Borrow;
 
 public class Borrower {
 
-	private String Name;
-	private String TemperaturePriorty;
+	protected String Name;
+	protected String TemperaturePriorty;
 	
 	public Borrower()
 	{

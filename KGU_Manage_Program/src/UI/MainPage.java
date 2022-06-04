@@ -10,8 +10,11 @@ public class MainPage {
 		System.out.println("| 0.종료      1. 조회      2.대여      3.반납   |");
 		System.out.println("|                                          |");
 		System.out.println("--------------------------------------------");
+		
 		int N = sc.nextInt();
 		System.out.println();
+
+
 		
 		switch (N) {
 			case 0: EndPage.SystemOff();
@@ -23,6 +26,5 @@ public class MainPage {
 			case 3: ReturnPage.Return();
 				break;
 		}
-		sc.close();
 	}
 }
