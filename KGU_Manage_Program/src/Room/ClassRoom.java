@@ -40,11 +40,19 @@ public class ClassRoom extends Room{
 	public int getroomNum() {
 		return roomNum;
 	}
+	
+	public void setStudentNum(int studentNum) {
+		this.studentNum = studentNum;
+	}
+	
+	public int getStudentNum() {
+		return studentNum;
+	}
 
 	
 	
 	
-	public void insertRoom() {
+	public void insertClassRoom() {
 		while(true) {
 			ClassRoom room = new ClassRoom();
 			Scanner scanner = new Scanner(System.in);
@@ -65,8 +73,11 @@ public class ClassRoom extends Room{
 			room.setIsUnderground(scanner.nextBoolean());
 			
 			System.out.println("classroom을 등록하시겠습니까? 등록 후 종료(y) 취소 후 재등록(n) 일반 종료(아무 키) : ");
-			scanner.close();
+			
 			String confirm = scanner.nextLine();
+			
+			room.isUsed = false;
+			
 			if(confirm == "y") {
 				roomList.add(room);
 				System.out.println("등록이 완료되었습니다.");
@@ -82,4 +93,29 @@ public class ClassRoom extends Room{
 		}
 	}
 	
+	public void reservationClassRoom() {
+		System.out.println("사용할 교실의 호수를 입력하시오 : ");
+		ClassRoom classRoom = new ClassRoom();
+		Scanner scanner = new Scanner(System.in);
+		int classRoomNum = scanner.nextInt();
+		if(roomList.contains(classRoomNum)) {
+			if(classRoom.isUsed == false) {
+				System.out.println("총 학생 인원 수는 몇명 입니까?");
+				classRoom.setStudentNum(scanner.nextInt());
+					if(classRoom.getStudentNum() >= classRoom.maxStudent) {
+						System.out.println("학생의 정원이 반의 정원을 초과하였습니다.");
+					}
+					else {
+						System.out.println("대여하였습니다.");
+						classRoom.isUsed = true;						
+					}
+			}
+			else {
+				System.out.println("해당 교실은 이미 예약되어있습니다.");
+			}
+		}else {
+			System.out.println("해당 교실은 존재하지 않습니다."); 
+			scanner.close();
+		}
+	}
 }

@@ -6,7 +6,8 @@ public class Room{
 	int airconditionCount;
 	int heaterCount;
 	int fanCount;
-
+	boolean isUsed;
+	int studentNum;
  	
 	public Room() {} 
 	
