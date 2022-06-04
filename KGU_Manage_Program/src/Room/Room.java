@@ -1,11 +1,13 @@
 package Room;
 
+
 public class Room{
 	int maxStudent;
 	int airconditionCount;
 	int heaterCount;
 	int fanCount;
-	
+
+ 	
 	public Room() {} 
 	
 	public Room(int maxStudent, int airconditionalCount, int heaterCount, int fanCount) {
@@ -60,7 +62,8 @@ public class Room{
 		
 	}
 	
-	public String temperatureCondition(int ac, int hc, int fc) {
+	
+	public int temperatureCondition(int ac, int hc, int fc) {
 		
 		int score = 0;
 		
@@ -76,12 +79,9 @@ public class Room{
 		if(fc>=4)
 			score += 10;
 		
-		if(score>=80) {
-			return "Suitable";
-		}
-		else {
-			return "Unsuitable";
-		}
+		return score;
 		
 	}
+
+	
 }
