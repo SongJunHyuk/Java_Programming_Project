@@ -37,7 +37,6 @@ public class ObjectManager {
 	public void SelectObject() {
 		System.out.println("-------------대여할 물건을 선택하세요-------------");
 		System.out.println("|                                          |");
-		System.out.println("|        0. 뒤로가기                          |");
 		System.out.println("|        1. 공                              |");
 		System.out.println("|        2. 에어펌프                          |");
 		System.out.println("|        3. 테이블                           |");
@@ -95,16 +94,24 @@ public class ObjectManager {
 
 		System.out.println("-------------본인의 정보를 입력하세요.-------------");
 		System.out.println("|                                          |");
-		System.out.println("|         이름, 전화번호를 입력해주세요             |");
+		System.out.println("|             이름을 입력해주세요                |");
 		System.out.println("|                                          |");
-		System.out.println("|         ex)홍길동 01012345678              |");
+		System.out.println("|         ex)  홍길동                        |");
 		System.out.println("|                                          |");
 		System.out.println("--------------------------------------------");
 
-		StringTokenizer st = new StringTokenizer(sc.nextLine());
 
-		String Name = st.nextToken();
-		String PhoneNumber = st.nextToken();
+		String Name = sc.next();
+		
+		System.out.println("-------------본인의 정보를 입력하세요.-------------");
+		System.out.println("|                                          |");
+		System.out.println("|             전화번호를 입력해주세요             |");
+		System.out.println("|                                          |");
+		System.out.println("|         ex)     01012345678              |");
+		System.out.println("|                                          |");
+		System.out.println("--------------------------------------------");
+		
+		String PhoneNumber = sc.next();
 
 		switch (N) {
 		case 1:

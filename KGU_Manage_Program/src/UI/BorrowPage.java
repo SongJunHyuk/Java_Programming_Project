@@ -25,6 +25,7 @@ public class BorrowPage {
 			break;
 		case 1:
 			ObjectManager.getInstance().SelectObject();
+			MainPage.FirstStep();
 			break;
 		case 2:
 			SelectPlace();
