@@ -4,121 +4,182 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class ClassRoom extends Room{
-	
-	boolean havingComputer;
-	boolean isUnderground;
-	private ArrayList<Room> roomList = new ArrayList<Room>();
-	int roomNum;
-	
-	public ClassRoom() {}
-	
-	public ClassRoom(boolean havingComputer, boolean isUnderground) {
-		this.havingComputer = havingComputer;
-		this.isUnderground = isUnderground;
-	}
-	
-	public boolean getHavingComputer() {
-		return havingComputer;
-	}
-	
-	public void setHavingComputer(boolean havingComputer) {
-		this.havingComputer = havingComputer;
-	}
-	
-	public boolean getIsUnderground() {
-		return isUnderground;
-	}
-	
-	public void setIsUnderground(boolean isUnderground) {
-		this.isUnderground = isUnderground;
-	}
-	
-	public void setroomNum(int roomNum) {
-		this.roomNum = roomNum;
-	}
-	
-	public int getroomNum() {
-		return roomNum;
-	}
-	
-	public void setStudentNum(int studentNum) {
-		this.studentNum = studentNum;
-	}
-	
-	public int getStudentNum() {
-		return studentNum;
-	}
+   
+   boolean havingComputer;
+   boolean isUnderground;
+   private ArrayList<ClassRoom> roomList = new ArrayList<ClassRoom>();
+   int roomNum;
+   boolean isUsed;
+   
+   public ClassRoom() {}
+   
+   public ClassRoom(boolean havingComputer, boolean isUnderground) {
+      this.havingComputer = havingComputer;
+      this.isUnderground = isUnderground;
+   }
+   
+   public boolean getHavingComputer() {
+      return havingComputer;
+   }
+   
+   public void setHavingComputer(boolean havingComputer) {
+      this.havingComputer = havingComputer;
+   }
+   
+   public boolean getIsUnderground() {
+      return isUnderground;
+   }
+   
+   public void setIsUnderground(boolean isUnderground) {
+      this.isUnderground = isUnderground;
+   }
+   
+   public void setroomNum(int roomNum) {
+      this.roomNum = roomNum;
+   }
+   
+   public int getroomNum() {
+      return roomNum;
+   }
+   
+   public void setStudentNum(int studentNum) {
+      this.studentNum = studentNum;
+   }
+   
+   public int getStudentNum() {
+      return studentNum;
+   }
+   
+   public void insertClassRoom() {
+      while(true) {
+         ClassRoom room = new ClassRoom();
+         Scanner scanner = new Scanner(System.in);
+         
+         System.out.println(" ±³½ÇÀÇ È£¼ö¸¦ ÀÔ·ÂÇÏ½Ã¿À (ex 8304) : ");
+         room.setroomNum(scanner.nextInt());
+         
+         System.out.println(" ±³½ÇÀÇ ÇĞ»ı Á¤¿øÀ» ÀÔ·ÂÇÏ½Ã¿À : ");
+         room.setMaxStudent(scanner.nextInt());
+         
+         System.out.println(" ¿¡¾îÄÁ, È÷ÅÍ, ¼±Ç³±âÀÇ °³¼ö¸¦ °¢°¢ ÀÔ·ÂÇÏ½Ã¿À : ");
+         room.setAirconditionCount(scanner.nextInt());
+         room.setHeaterCount(scanner.nextInt());
+         room.setFanCount(scanner.nextInt());
+         
+         System.out.println("ÄÄÇ»ÅÍÀÇ À¯¹«, ÁöÇÏÀÎÁö ¾Æ´ÑÁö true/false °¢°¢ ÀÔ·ÂÇÏ½Ã¿À ");
+         room.setHavingComputer(scanner.nextBoolean());
+         room.setIsUnderground(scanner.nextBoolean());
+         
+         System.out.println("classroomÀ» µî·ÏÇÏ½Ã°Ú½À´Ï±î? µî·Ï ÈÄ Á¾·á(y) Ãë¼Ò ÈÄ Àçµî·Ï(n) ÀÏ¹İ Á¾·á(¾Æ¹« Å°) :");
+         
+         String confirm = scanner.nextLine();
+         scanner.close();
+         room.isUsed = false;
+         
+         if(confirm == "y") {
+            roomList.add(room);
+            System.out.println("µî·ÏÀÌ ¿Ï·áµÇ¾ú½À´Ï´Ù.");
+            break;
+         }
+         else if(confirm == "n") {
+            System.out.println("»ç¿ëÇÒ ±³½ÇÀÇ È£¼ö¸¦ ÀÔ·ÂÇÏ½Ã¿À : ");
+         }
+         else {
+            System.out.println("ÃÑ ÇĞ»ı ÀÎ¿ø ¼ö´Â ¸î¸í ÀÔ´Ï±î?");
+            break;
+         }
+      }
+   
+   }
+      public void setIsUsed(boolean isUsed) {
+         this.isUsed = isUsed;
+      }
+      
+      public boolean getIsUsed() {
+         return isUsed;
+      }
+      
+      
+   @SuppressWarnings("unlikely-arg-type")
+   public void reservationClassRoom() {
+      do {
+         System.out.println("»ç¿ëÇÒ ±³½ÇÀÇ È£¼ö¸¦ ÀÔ·ÂÇÏ½Ã¿À : ");
+         ClassRoom classRoom = new ClassRoom();         
+         Scanner scanner = new Scanner(System.in);
+         int classRoomNum = scanner.nextInt();
+         
+         if(roomList.contains(classRoomNum)) {
+            
+            if(classRoom.getIsUsed() == false) {
+               
+               System.out.println("ÃÑ ÇĞ»ı ÀÎ¿ø ¼ö´Â ¸î¸í ÀÔ´Ï±î?");
+               
+               classRoom.setStudentNum(scanner.nextInt());
+               
+                  if(classRoom.getStudentNum() >= classRoom.maxStudent) {
+                     
+                     System.out.println("ÇĞ»ıÀÇ Á¤¿øÀÌ ¹İÀÇ Á¤¿øÀ» ÃÊ°úÇÏ¿´½À´Ï´Ù.");
+                     
+                  } else {
+                     
+                     System.out.println("´ë¿©ÇÏ¿´½À´Ï´Ù.");
+                     classRoom.setIsUsed(true);   
+                     break;
+                  
+                  }
+            
+            } else {
+               
+               System.out.println("ÇØ´ç ±³½ÇÀº ÀÌ¹Ì ¿¹¾àµÇ¾îÀÖ½À´Ï´Ù.");
+               
+            }
+            
+         } else {
+            
+            System.out.println("ÇØ´ç ±³½ÇÀº Á¸ÀçÇÏÁö ¾Ê½À´Ï´Ù."); 
+            
+         }
+         
+         scanner.close();
+         
+      }while(true);
+   }
+   
+   @SuppressWarnings("unlikely-arg-type")
+   public void returnClassRoom() {
+      do {
+         ClassRoom classRoom = new ClassRoom();
+         System.out.println("¹İ³³ÇÒ ±³½ÇÀÇ È£¼ö¸¦ ÀÔ·ÂÇÏ½Ã¿À : ( '0' ÀÔ·Â½Ã Ãë¼Ò ) ");
+         @SuppressWarnings("resource")
+         Scanner scanner = new Scanner(System.in);
+         int classRoomNum = scanner.nextInt();
+         if(classRoomNum == 0) {
+            break;
+         }else {
+            if(roomList.contains(classRoomNum)) {
+               if(classRoom.getIsUsed() == true) {
+                  classRoom.setIsUsed(false);
+                  System.out.println("¹İ³³À» ¿Ï·áÇÏ¿´½À´Ï´Ù.");
+                  break;
+               }
+               else {
+                  System.out.println("ÇØ´ç ±³½ÇÀº ÀÌ¹Ì ¹İ³³µÇ¾îÀÖ½À´Ï´Ù.");
+               }
+            }else {
+               System.out.println(" ÇØ´ç ±³½ÇÀº Á¸ÀçÇÏÁö ¾Ê½À´Ï´Ù. ");
+            }
+         }
+      }while(true);
+   }
+   
+   public void showClassRoom() {
+      
+      for(int i = 0; i <= roomList.size(); i++) {
+         
+         System.out.println("  " + roomList.get(i) + "  " + roomList.get(i).getIsUsed());
+         
+      }
+      
+   }
 
-	
-	
-	
-	public void insertClassRoom() {
-		while(true) {
-			ClassRoom room = new ClassRoom();
-			Scanner scanner = new Scanner(System.in);
-			
-			System.out.println("êµì‹¤ì˜ í˜¸ìˆ˜ë¥¼ ì…ë ¥í•˜ì‹œì˜¤ (ex 8304) : ");
-		    room.setroomNum(scanner.nextInt());
-			
-			System.out.println("í•´ë‹¹ êµì‹¤ì˜ ìµœëŒ€ì¸ì›ì„ ì…ë ¥í•˜ì‹œì˜¤ : ");
-			room.setMaxStudent(scanner.nextInt());
-			
-			System.out.println("í•´ë‹¹ êµì‹¤ì˜ ì—ì–´ì»¨, íˆí„°, ì„ í’ê¸°ì˜ ê°œìˆ˜ë¥¼ ê°ê° ì…ë ¥í•˜ì‹œì˜¤ : ");
-			room.setAirconditionCount(scanner.nextInt());
-			room.setHeaterCount(scanner.nextInt());
-			room.setFanCount(scanner.nextInt());
-			
-			System.out.println("í•´ë‹¹ êµì‹¤ì— ì»´í“¨í„°ê°€ ìˆëŠ”ì§€, ì§€í•˜ì¸ì§€ ì•„ë‹Œì§€ ê°ê° true/falseë¡œ ì…ë ¥í•˜ì‹œì˜¤");
-			room.setHavingComputer(scanner.nextBoolean());
-			room.setIsUnderground(scanner.nextBoolean());
-			
-			System.out.println("classroomì„ ë“±ë¡í•˜ì‹œê² ìŠµë‹ˆê¹Œ? ë“±ë¡ í›„ ì¢…ë£Œ(y) ì·¨ì†Œ í›„ ì¬ë“±ë¡(n) ì¼ë°˜ ì¢…ë£Œ(ì•„ë¬´ í‚¤) : ");
-			
-			String confirm = scanner.nextLine();
-			
-			room.isUsed = false;
-			
-			if(confirm == "y") {
-				roomList.add(room);
-				System.out.println("ë“±ë¡ì´ ì™„ë£Œë˜ì—ˆìŠµë‹ˆë‹¤.");
-				break;
-			}
-			else if(confirm == "n") {
-				System.out.println("ë“±ë¡ì´ ì·¨ì†Œë˜ì—ˆìŠµë‹ˆë‹¤. ì¬ë“±ë¡ ì‹œì‘");
-			}
-			else {
-				System.out.println("ë“±ë¡ ì ˆì°¨ ì¢…ë£Œ");
-				break;
-			}
-		}
-	}
-	
-	public void reservationClassRoom() {
-		do {
-			System.out.println("ì‚¬ìš©í•  êµì‹¤ì˜ í˜¸ìˆ˜ë¥¼ ì…ë ¥í•˜ì‹œì˜¤ : ");
-			ClassRoom classRoom = new ClassRoom();
-			Scanner scanner = new Scanner(System.in);
-			int classRoomNum = scanner.nextInt();
-			if(roomList.contains(classRoomNum)) {
-				if(classRoom.isUsed == false) {
-					System.out.println("ì´ í•™ìƒ ì¸ì› ìˆ˜ëŠ” ëª‡ëª… ì…ë‹ˆê¹Œ?");
-					classRoom.setStudentNum(scanner.nextInt());
-						if(classRoom.getStudentNum() >= classRoom.maxStudent) {
-							System.out.println("í•™ìƒì˜ ì •ì›ì´ ë°˜ì˜ ì •ì›ì„ ì´ˆê³¼í•˜ì˜€ìŠµë‹ˆë‹¤.");
-						}
-						else {
-							System.out.println("ëŒ€ì—¬í•˜ì˜€ìŠµë‹ˆë‹¤.");
-							classRoom.isUsed = true;						
-						}
-				}
-				else {
-					System.out.println("í•´ë‹¹ êµì‹¤ì€ ì´ë¯¸ ì˜ˆì•½ë˜ì–´ìˆìŠµë‹ˆë‹¤.");
-				}
-			}else {
-				System.out.println("í•´ë‹¹ êµì‹¤ì€ ì¡´ì¬í•˜ì§€ ì•ŠìŠµë‹ˆë‹¤."); 
-				scanner.close();
-			}
-		}while(true);
-		
-	}
 }
