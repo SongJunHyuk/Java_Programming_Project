@@ -15,7 +15,7 @@ public class ReturnPage {
 		Scanner sc = new Scanner(System.in);
 		System.out.println("-------------반납할 대상을 선택하세요-------------");
 		System.out.println("|                                          |");
-		System.out.println("| 0.뒤로가기     1.물건      2.장소      3.방   |");
+		System.out.println("| 0.뒤로가기     1.물건      2.장소      3.방    |");
 		System.out.println("|                                          |");
 		System.out.println("--------------------------------------------");
 
@@ -42,7 +42,7 @@ public class ReturnPage {
 	public static void ReturnPlace() {
 		System.out.println("----------------반납 장소를 선택하세요-------------");
 		System.out.println("|                                            |");
-		System.out.println("|  0.뒤로가기       1.축구장          2.농구장     |");
+		System.out.println("|  0.뒤로가기       1.축구장          2.농구장      |");
 		System.out.println("|                                            |");
 		System.out.println("----------------------------------------------");
 		Scanner sc = new Scanner(System.in);
@@ -60,14 +60,13 @@ public class ReturnPage {
 			BasketBallCourt.getInstance().deleteTable();
 			break;
 		}
-
 	}
 
 	public static void SelectReturnRoom() {
 		Scanner sc = new Scanner(System.in);
 		System.out.println("-------------반납할 대상을 선택하세요-------------");
 		System.out.println("|                                          |");
-		System.out.println("| 0.뒤로가기         1.교실         2.회의실   |");
+		System.out.println("| 0.뒤로가기         1.교실         2.회의실     |");
 		System.out.println("|                                          |");
 		System.out.println("--------------------------------------------");
 
@@ -87,7 +86,7 @@ public class ReturnPage {
 	public static void SelectReturnClassRoom() {
 		System.out.println("----------------반납 회의실을 선택하세요-------------");
 		System.out.println("|                                            |");
-		System.out.println("|     0.뒤로가기                               |");
+		System.out.println("|     0.뒤로가기                                |");
 		System.out.println("|     1.ClassRoom001                         |");
 		System.out.println("|     2.ClassRoom002                         |");
 		System.out.println("|     3.ClassRoom101                         |");
@@ -144,13 +143,12 @@ public class ReturnPage {
 			MainPage.FirstStep();
 			break;
 		}
-
 	}
 
 	public static void SelectReturnMeetingRoom() {
 		System.out.println("----------------반납할 교실을 선택하세요-------------");
 		System.out.println("|                                            |");
-		System.out.println("|     0.뒤로가기                               |");
+		System.out.println("|     0.뒤로가기                                |");
 		System.out.println("|     1.KAgroSmallMeetingRoom                |");
 		System.out.println("|     2.KAgroBigMeetingRoom                  |");
 		System.out.println("|     3.LibraryMeetingRoom                   |");

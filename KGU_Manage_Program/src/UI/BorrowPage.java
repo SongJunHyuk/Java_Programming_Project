@@ -12,7 +12,7 @@ public class BorrowPage {
 	public static void Borrow() {
 		System.out.println("----------------대여 대상을 선택하세요--------------");
 		System.out.println("|                                            |");
-		System.out.println("| 0.뒤로가기     1.물건      2.장소      3.방     |");
+		System.out.println("| 0.뒤로가기     1.물건      2.장소      3.방      |");
 		System.out.println("|                                            |");
 		System.out.println("----------------------------------------------");
 		Scanner sc = new Scanner(System.in);
@@ -39,7 +39,7 @@ public class BorrowPage {
 	public static void SelectPlace() {
 		System.out.println("----------------대여 장소를 선택하세요-------------");
 		System.out.println("|                                            |");
-		System.out.println("|  0.뒤로가기       1.축구장          2.농구장     |");
+		System.out.println("|  0.뒤로가기       1.축구장          2.농구장      |");
 		System.out.println("|                                            |");
 		System.out.println("----------------------------------------------");
 		Scanner sc = new Scanner(System.in);
@@ -58,15 +58,13 @@ public class BorrowPage {
 			BasketBallCourt.getInstance().selectTimetable();
 			MainPage.FirstStep();
 			break;
-
 		}
-
 	}
 
 	public static void SelectClassRoom() {
 		System.out.println("----------------대여할 곳을 선택하세요--------------");
 		System.out.println("|                                            |");
-		System.out.println("|     0.뒤로가기      1.교실      2.회의실        |");
+		System.out.println("|     0.뒤로가기      1.교실      2.회의실         |");
 		System.out.println("|                                            |");
 		System.out.println("----------------------------------------------");
 		Scanner sc = new Scanner(System.in);
@@ -86,13 +84,12 @@ public class BorrowPage {
 			MainPage.FirstStep();
 			break;
 		}
-
 	}
 
 	public static void SelectEachClassRoom() {
 		System.out.println("----------------대여 교실을 선택하세요--------------");
 		System.out.println("|                                            |");
-		System.out.println("|     0.뒤로가기                               |");
+		System.out.println("|     0.뒤로가기                                |");
 		System.out.println("|     1.ClassRoom001                         |");
 		System.out.println("|     2.ClassRoom002                         |");
 		System.out.println("|     3.ClassRoom101                         |");
@@ -154,7 +151,7 @@ public class BorrowPage {
 	public static void SelectEachMeetingRoom() {
 		System.out.println("---------------대여 회의실을 선택하세요-------------");
 		System.out.println("|                                            |");
-		System.out.println("|     0.뒤로가기                               |");
+		System.out.println("|     0.뒤로가기                                |");
 		System.out.println("|     1.KAgroSmallMeetingRoom                |");
 		System.out.println("|     2.KAgroBigMeetingRoom                  |");
 		System.out.println("|     3.LibraryMeetingRoom                   |");
