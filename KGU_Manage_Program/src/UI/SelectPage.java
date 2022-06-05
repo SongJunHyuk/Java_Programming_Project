@@ -3,13 +3,14 @@ import java.util.Scanner;
 
 import Place.BasketBallCourt;
 import Place.Playground;
+import Room.ClassRoom;
 
 public class SelectPage {
 	public static void Select() { // 조회 기능
 		Scanner sc = new Scanner(System.in);
 		System.out.println("---------------조회할 것을 선택하세요-------------");
 		System.out.println("|                                          |");
-		System.out.println("| 0.뒤로가기     1.물건      2.장소      3.방    |");
+		System.out.println("| 0.뒤로가기     1.물건      2.장소      3.방   |");
 		System.out.println("|                                          |");
 		System.out.println("--------------------------------------------");
 		int N = sc.nextInt();
@@ -72,7 +73,8 @@ public class SelectPage {
 	
 	public static void loadclassRoom()
 	{
-		System.out.println();
+		System.out.println("현재 교실의 리스트 ");
+		ClassRoom.showClassRoom();
 	}
 	
 	public static void loadRoom()

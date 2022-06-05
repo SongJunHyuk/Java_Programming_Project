@@ -2,6 +2,7 @@ package UI;
 import java.util.Scanner;
 import Place.BasketBallCourt;
 import Place.Playground;
+import Room.ClassRoom;
 
 
 public class BorrowPage {
@@ -22,7 +23,7 @@ public class BorrowPage {
 			break;
 		case 2: SelectPlace();
 			break;
-		case 3:
+		case 3: SelectClassRoom();
 			break;
 		}
 	}
@@ -34,8 +35,9 @@ public class BorrowPage {
 		System.out.println("|                                            |");
 		System.out.println("----------------------------------------------");
 		Scanner sc = new Scanner(System.in);
-		
+	
 		int N = sc.nextInt();
+		sc.close();
 		switch (N) {
 		case 0: Borrow();
 			break;
@@ -43,6 +45,27 @@ public class BorrowPage {
 		 	MainPage.FirstStep();
 			break;
 		case 2: BasketBallCourt.getInstance().selectTimetable();
+			break;
+		
+		}
+		
+	}
+	
+	public static void SelectClassRoom() {
+		System.out.println("----------------대여 교실을 선택하세요-------------");
+		System.out.println("|                                            |");
+		System.out.println("|     0.뒤로가기                  1.교실        |");
+		System.out.println("|                                            |");
+		System.out.println("----------------------------------------------");
+		Scanner sc = new Scanner(System.in);
+		
+		int n = sc.nextInt();
+		sc.close();
+		switch(n) {
+		case 0: Borrow();
+			break;
+		case 1: ClassRoom.reservationClassRoom();
+			MainPage.FirstStep();
 			break;
 		}
 		
