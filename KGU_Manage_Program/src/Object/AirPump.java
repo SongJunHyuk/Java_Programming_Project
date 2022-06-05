@@ -1,8 +1,13 @@
 package Object;
 
-public class Object {
+public class AirPump extends Object {
 	private int quantity;
 	private String Number;
+
+	AirPump(int quantity, String num) {
+		this.quantity = quantity;
+		this.Number = num;
+	}
 
 	public void setQuantity(int num) {
 		this.quantity = num;

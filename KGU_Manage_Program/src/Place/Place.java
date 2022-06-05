@@ -1,8 +1,7 @@
 package Place;
 
 public class Place {
-	
-	public void showTimeTable()
-	{
+
+	public void showTimeTable() {
 	}
 }

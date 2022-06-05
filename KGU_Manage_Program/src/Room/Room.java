@@ -1,8 +1,7 @@
 package Room;
 
+public class Room {
+	public void showTimeTable() {
 
-public class Room{
-   public void showTimeTable() {
-      
-   }
+	}
 }
