@@ -12,10 +12,6 @@ public class Playground extends Place {
 	private HashMap<Group, Integer> hashmap = new HashMap<>();
 	private boolean timeTable[][] = new boolean[6][7];
 
-	public void setPurpose() {
-
-	}
-
 	Scanner sc = new Scanner(System.in);
 
 	public static Playground playground = new Playground();

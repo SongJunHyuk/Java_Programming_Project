@@ -18,10 +18,6 @@ public class MeetingRoom extends Room {
 	public static MeetingRoom EngineeringMeetingRoom = new MeetingRoom();
 	public static MeetingRoom LiberalMeetingRoom = new MeetingRoom();
 
-	public void setPurpose() {
-
-	}
-
 	public static MeetingRoom getInstanceKAS() {
 		return KAgoraSmallMeetingRoom;
 	}
