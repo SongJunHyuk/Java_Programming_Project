@@ -23,10 +23,6 @@ public class ClassRoom extends Room {
 	public static ClassRoom classRoom302 = new ClassRoom();
 	public static ClassRoom classRoom401 = new ClassRoom();
 
-	public void setPurpose() {
-
-	}
-
 	public static ClassRoom getInstance001() {
 		return classRoom001;
 	}
