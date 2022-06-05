@@ -2,6 +2,7 @@ package UI;
 
 import java.util.Scanner;
 
+import Object.ObjectManager;
 import Place.BasketBallCourt;
 import Place.Playground;
 import Room.ClassRoom;
@@ -23,7 +24,8 @@ public class SelectPage {
 			MainPage.FirstStep();
 			break;
 		case 1:
-			selectObject();
+			ObjectManager.getInstance().showObject();
+			MainPage.FirstStep();
 			break;
 		case 2:
 			selectPlace();
@@ -181,9 +183,5 @@ public class SelectPage {
 			MainPage.FirstStep();
 			break;
 		}
-	}
-
-	public static void selectObject() {
-
 	}
 }

@@ -147,7 +147,7 @@ public class ClassRoom extends Room {
 		for (int i = start; i <= end; i++) {
 			timeTable[i][day] = true;
 		}
-		System.out.println("등록이 완료되었습니다.");
+		System.out.println("-------등록이 완료되었습니다.-------");
 		showTimeTable();
 	}
 
