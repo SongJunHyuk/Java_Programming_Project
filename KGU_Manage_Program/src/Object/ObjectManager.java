@@ -32,99 +32,96 @@ public class ObjectManager {
 	}
 
 	public void SelectObject() {
-		System.out.println("-------------대여할 물건을 선택하세요-------------");
-		System.out.println("|                                          |");
-		System.out.println("|        1. 공                              |");
-		System.out.println("|        2. 에어펌프                          |");
-		System.out.println("|        3. 테이블                           |");
-		System.out.println("|        4. 텐트                            |");
-		System.out.println("|                                          |");
-		System.out.println("-------------------------------------------");
-		int N = sc.nextInt();
+		while (true) {
+			System.out.println("-------------대여할 물건을 선택하세요-------------");
+			System.out.println("|                                          |");
+			System.out.println("|        1. 공                              |");
+			System.out.println("|        2. 에어펌프                          |");
+			System.out.println("|        3. 테이블                           |");
+			System.out.println("|        4. 텐트                            |");
+			System.out.println("|                                          |");
+			System.out.println("-------------------------------------------");
+			int N = sc.nextInt();
 
-		System.out.println("---------------대여개수를 고르세요---------------");
-		System.out.println("|                                          |");
-		System.out.println("|        대여할 개수를 입력하세요.                 |");
-		System.out.println("|                                          |");
-		System.out.println("-------------------------------------------");
+			System.out.println("---------------대여개수를 고르세요---------------");
+			System.out.println("|                                          |");
+			System.out.println("|        대여할 개수를 입력하세요.                 |");
+			System.out.println("|                                          |");
+			System.out.println("-------------------------------------------");
 
-		int count = sc.nextInt();
+			int count = sc.nextInt();
 
-		switch (N) {
-		case 1:
-			if (checkBallCount(count))
+			switch (N) {
+			case 1:
+				if (checkBallCount(count))
+					break;
+				else {
+					System.out.println("요청하는 개수 보다 남은 개수가 부족합니다.");
+					System.out.println("다시 입력해주세요");
+					continue;
+				}
+			case 2:
+				if (checkAirpumpCount(count))
+					break;
+				else {
+					System.out.println("요청하는 개수 보다 남은 개수가 부족합니다.");
+					System.out.println("다시 입력해주세요");
+					continue;
+				}
+			case 3:
+				if (checkTableCount(count))
+					break;
+				else {
+					System.out.println("요청하는 개수 보다 남은 개수가 부족합니다.");
+					System.out.println("다시 입력해주세요");
+					continue;
+				}
+			case 4:
+				if (checkTentCount(count))
+					break;
+				else {
+					System.out.println("요청하는 개수 보다 남은 개수가 부족합니다.");
+					System.out.println("다시 입력해주세요");
+					continue;
+				}
+			}
+			System.out.println("-------------본인의 정보를 입력하세요.-------------");
+			System.out.println("|                                          |");
+			System.out.println("|             이름을 입력해주세요                |");
+			System.out.println("|                                          |");
+			System.out.println("|         ex)  홍길동                        |");
+			System.out.println("|                                          |");
+			System.out.println("--------------------------------------------");
+
+			String Name = sc.next();
+
+			System.out.println("-------------본인의 정보를 입력하세요.-------------");
+			System.out.println("|                                          |");
+			System.out.println("|             전화번호를 입력해주세요             |");
+			System.out.println("|                                          |");
+			System.out.println("|         ex)     01012345678              |");
+			System.out.println("|                                          |");
+			System.out.println("--------------------------------------------");
+
+			String PhoneNumber = sc.next();
+
+			switch (N) {
+			case 1:
+				enrollBall(PhoneNumber, count);
 				break;
-			else {
-				System.out.println("요청하는 개수 보다 남은 개수가 부족합니다.");
-				System.out.println("다시 입력해주세요");
-				SelectObject();
+			case 2:
+				enrollAirpump(PhoneNumber, count);
+				break;
+			case 3:
+				enrollTable(PhoneNumber, count);
+				break;
+			case 4:
+				enrollTent(PhoneNumber, count);
 				break;
 			}
-		case 2:
-			if (checkAirpumpCount(count))
-				break;
-			else {
-				System.out.println("요청하는 개수 보다 남은 개수가 부족합니다.");
-				System.out.println("다시 입력해주세요");
-				SelectObject();
-				break;
-			}
-		case 3:
-			if (checkTableCount(count))
-				break;
-			else {
-				System.out.println("요청하는 개수 보다 남은 개수가 부족합니다.");
-				System.out.println("다시 입력해주세요");
-				SelectObject();
-				break;
-			}
-		case 4:
-			if (checkTentCount(count))
-				break;
-			else {
-				System.out.println("요청하는 개수 보다 남은 개수가 부족합니다.");
-				System.out.println("다시 입력해주세요");
-				SelectObject();
-				break;
-			}
+			System.out.println("------등록이 완료되었습니다.------");
+			break;
 		}
-
-		System.out.println("-------------본인의 정보를 입력하세요.-------------");
-		System.out.println("|                                          |");
-		System.out.println("|             이름을 입력해주세요                |");
-		System.out.println("|                                          |");
-		System.out.println("|         ex)  홍길동                        |");
-		System.out.println("|                                          |");
-		System.out.println("--------------------------------------------");
-
-		String Name = sc.next();
-
-		System.out.println("-------------본인의 정보를 입력하세요.-------------");
-		System.out.println("|                                          |");
-		System.out.println("|             전화번호를 입력해주세요             |");
-		System.out.println("|                                          |");
-		System.out.println("|         ex)     01012345678              |");
-		System.out.println("|                                          |");
-		System.out.println("--------------------------------------------");
-
-		String PhoneNumber = sc.next();
-
-		switch (N) {
-		case 1:
-			enrollBall(PhoneNumber, count);
-			break;
-		case 2:
-			enrollAirpump(PhoneNumber, count);
-			break;
-		case 3:
-			enrollTable(PhoneNumber, count);
-			break;
-		case 4:
-			enrollTent(PhoneNumber, count);
-			break;
-		}
-		System.out.println("------등록이 완료되었습니다.------");
-		return;
 	}
 
 	public boolean checkBallCount(int count) {

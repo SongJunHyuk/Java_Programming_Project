@@ -64,12 +64,12 @@ public class Playground extends Place {
 			int starttime = Integer.parseInt(start);
 			int endtime = Integer.parseInt(end);
 			if (starttime >= endtime) {
-				System.out.println("잘못 입력하셨습니다. 다시 입력해주세요");
+				System.out.println("시간을 잘못 입력하셨습니다. 다시 입력해주세요");
 				continue;
 			}
 
 			if (!timeTableCheck(dayToCol(day), startToTable(starttime), endToTable(endtime)))
-				System.out.println("잘못 입력하셨습니다. 다시 입력해주세요");
+				System.out.println("해당 시간은 이미 예약되어있습니다.");
 
 			else {
 				enrollTable(dayToCol(day), startToTable(starttime), endToTable(endtime));
@@ -126,7 +126,7 @@ public class Playground extends Place {
 			int starttime = Integer.parseInt(start);
 			int endtime = Integer.parseInt(end);
 			if (starttime >= endtime) {
-				System.out.println("잘못 입력하셨습니다. 다시 입력해주세요");
+				System.out.println("시간을 잘못 입력하셨습니다. 다시 입력해주세요");
 				continue;
 			} else {
 				Iterator<Group> iter = hashmap.keySet().iterator();
