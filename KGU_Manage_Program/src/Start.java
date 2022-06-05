@@ -42,7 +42,7 @@ class MeetingRoom extends Room{
 	}
 	
 }*/
-/*{
+/*
 		MeetingRoom R = new MeetingRoom("8002A");
 		R.SetMaxStudent(50);
 		R.ShowRoomName(); R.ShowMax();
