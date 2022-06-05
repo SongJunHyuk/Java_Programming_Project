@@ -4,6 +4,7 @@ import java.util.Scanner;
 import java.util.StringTokenizer;
 
 import Borrow.Indivisual;
+import Object.ObjectManager;
 import Place.BasketBallCourt;
 import Place.Playground;
 import Room.ClassRoom;
@@ -24,7 +25,8 @@ public class ReturnPage {
 			MainPage.FirstStep();
 			break;
 		case 1:
-			ReturnObject();
+			ObjectManager.getInstance().deleteObject();
+			MainPage.FirstStep();
 			break;
 		case 2:
 			ReturnPlace();
@@ -80,24 +82,6 @@ public class ReturnPage {
 		case 2:
 			SelectReturnMeetingRoom();
 		}
-	}
-
-	public static void ReturnObject() {
-		Scanner sc = new Scanner(System.in);
-		System.out.println("--------------------------------------------");
-		System.out.println("|                                           |");
-		System.out.println("|    본인의 이름과 전화번호와 반납할 물건울 입력하세요 |");
-		System.out.println("|                                           |");
-		System.out.println("|    ex) 홍길동 01012345678    100            |");
-		System.out.println("|                                           |");
-		System.out.println("--------------------------------------------");
-
-		String str = sc.nextLine();
-		StringTokenizer st = new StringTokenizer(str);
-		Indivisual person = new Indivisual();
-		person.setName(st.nextToken());
-		person.setPhoneNumber(st.nextToken());
-		st.nextToken();
 	}
 
 	public static void SelectReturnClassRoom() {

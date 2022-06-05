@@ -1,6 +1,8 @@
 package UI;
 
 import java.util.Scanner;
+
+import Object.ObjectManager;
 import Place.BasketBallCourt;
 import Place.Playground;
 import Room.ClassRoom;
@@ -22,6 +24,7 @@ public class BorrowPage {
 			MainPage.FirstStep();
 			break;
 		case 1:
+			ObjectManager.getInstance().SelectObject();
 			break;
 		case 2:
 			SelectPlace();
