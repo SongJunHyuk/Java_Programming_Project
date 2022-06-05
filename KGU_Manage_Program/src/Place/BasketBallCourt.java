@@ -92,7 +92,7 @@ public class BasketBallCourt extends Place{
 		hashmap.put(new Group(name, num, representative), val) ;
 		
 		for(int i = start ; i <= end; i++) {
-			timeTable[day][i] = true;
+			timeTable[i][day] = true;
 		}
 		System.out.println("등록이 완료되었습니다.");
 		showTimeTable();
@@ -147,7 +147,7 @@ public class BasketBallCourt extends Place{
 	
 	public void delete(int day, int start, int end) {
 		for(int i = start ; i <= end; i++) {
-			timeTable[day][i] = false;
+			timeTable[i][day] = false;
 		}
 	}
 	

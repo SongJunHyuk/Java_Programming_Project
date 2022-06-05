@@ -18,7 +18,7 @@ public class MainPage {
 		
 		switch (N) {
 			case 0: EndPage.SystemOff();
-				break;
+				System.exit(0);
 			case 1: SelectPage.Select();
 				break;
 			case 2: BorrowPage.Borrow();

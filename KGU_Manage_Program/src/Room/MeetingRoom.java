@@ -4,11 +4,10 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Scanner;
 import java.util.StringTokenizer;
-
 import Borrow.Group;
 
-public class ClassRoom extends Room{
-   
+public class MeetingRoom extends Room {
+
     private HashMap<Group, Integer> hashmap = new HashMap<>();
     boolean havingComputer;
     boolean isUnderground;
@@ -17,64 +16,46 @@ public class ClassRoom extends Room{
    
     private boolean timeTable[][] = new boolean[6][7];
     
-    public static ClassRoom classRoom001= new ClassRoom();
-    public static ClassRoom classRoom002 = new ClassRoom();
-    public static ClassRoom classRoom101 = new ClassRoom();
-    public static ClassRoom classRoom102 = new ClassRoom();
-    public static ClassRoom classRoom201 = new ClassRoom();
-    public static ClassRoom classRoom202 = new ClassRoom();
-    public static ClassRoom classRoom301 = new ClassRoom();
-    public static ClassRoom classRoom302 = new ClassRoom();
-    public static ClassRoom classRoom401 = new ClassRoom();
+    public static MeetingRoom KAgoraSmallMeetingRoom = new MeetingRoom();
+    public static MeetingRoom KAgoraBigMeetingRoom = new MeetingRoom();
+    public static MeetingRoom LibraryMeetingRoom = new MeetingRoom();
+    public static MeetingRoom EngineeringMeetingRoom = new MeetingRoom();
+    public static MeetingRoom LiberalMeetingRoom = new MeetingRoom();
     
     public void setPurpose(){
    
     }
     
-    public static ClassRoom getInstance001() {
-       return classRoom001;
+    public static MeetingRoom getInstanceKAS() {
+       return KAgoraSmallMeetingRoom;
     }
-    public static ClassRoom getInstance002() {
-       return classRoom002;
-    }
-    public static ClassRoom getInstance101() {
-       return classRoom101;
-    }
-    public static ClassRoom getInstance102() {
-       return classRoom102;
-    }
-    public static ClassRoom getInstance201() {
-       return classRoom201;
-    }
-    public static ClassRoom getInstance202() {
-       return classRoom202;
-    }
-    public static ClassRoom getInstance301() {
-       return classRoom301;
-    }
-    public static ClassRoom getInstance302() {
-       return classRoom302;
-    }
-    public static ClassRoom getInstance401() {
-       return classRoom401;
-    }
-    
+    public static MeetingRoom getInstanceKAB() {
+        return KAgoraBigMeetingRoom;
+     }
+    public static MeetingRoom getInstanceLMR() {
+        return LibraryMeetingRoom;
+     }
+    public static MeetingRoom getInstanceEMR() {
+        return EngineeringMeetingRoom;
+     }
+    public static MeetingRoom getInstanceLiMR() {
+        return LiberalMeetingRoom;
+     }
    Scanner sc = new Scanner(System.in);
 
-    public ClassRoom() {}
+    public MeetingRoom() {}
    
     public void showTimeTable()
     {
        int starttime = 10;
        int endtime = 12;
       
-      System.out.println("          월  화  수  목  금  토  일");
+      System.out.println("          월	화	수	목	금	토	일");
       for(int i = 0 ; i < 6; i++) {
          System.out.print(starttime + "시~" + endtime + "시");
           for(int j = 0 ; j < 7; j++)
           {
-        	  for(int k = 0; k<j; k++)
-        		  System.out.print("  ");
+             System.out.print("    ");
              if(timeTable[i][j] == false)
                 System.out.print(" ");
              else

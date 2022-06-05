@@ -255,14 +255,6 @@ class TwoWayRadio extends Object{
 	}
 }
 
-class LCar extends Object{
-	private int quantity;
-	
-	LCar(int quantity){
-		this.quantity = quantity;
-	}
-}
-
 class Battery extends Object{
 	private static int capacity;
 	private int capacityLeft;
@@ -322,33 +314,4 @@ class ChargingCable extends Object{
 	}
 }
 
-class HairIron extends Object{
-private int quantity;
-	
-	HairIron(int quantity){
-		this.quantity = quantity;
-	}
-}
 
-class HairDryer extends Object{
-	private int quantity;
-	
-	HairDryer(int quantity){
-		this.quantity = quantity;
-	}
-}
-
-class Helmet extends Object{
-	private static String size;
-	private int quantity;
-	
-	Helmet(String size, int quantity){
-		this.size = size;
-		this.quantity = quantity;
-	}
-	
-	public String getHelmetSize() {
-		return size;
-	}
-	
-}
