@@ -65,27 +65,27 @@ public class ClassRoom extends Room{
    
     public void showTimeTable()
     {
-       int starttime = 10;
-       int endtime = 12;
-      
-      System.out.println("          월  화  수  목  금  토  일");
-      for(int i = 0 ; i < 6; i++) {
-         System.out.print(starttime + "시~" + endtime + "시");
-          for(int j = 0 ; j < 7; j++)
-          {
-        	  for(int k = 0; k<j; k++)
-        		  System.out.print("  ");
-             if(timeTable[i][j] == false)
-                System.out.print(" ");
-             else
-                System.out.print("O");
-          }
-          starttime+=2;
-          endtime+=2;
-          System.out.println();
-       }
+        int starttime = 10;
+        int endtime = 12;
+       
+        System.out.println("      		월	화	수	목	금	토	일");
+        for(int i = 0 ; i < 6; i++) {
+          System.out.print(starttime + "시~" + endtime + "시");
+          System.out.print("	");
+           for(int j = 0 ; j < 7; j++)
+           {
+              System.out.print("	");
+              if(timeTable[i][j] == false)
+                 System.out.print(" ");
+              else
+                 System.out.print("O");
+           }
+           starttime+=2;
+           endtime+=2;
+           System.out.println();
+        }
     }
-   
+    
     public void selectTimetable()
    {
       while(true) {
