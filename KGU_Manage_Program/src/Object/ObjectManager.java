@@ -3,16 +3,13 @@ package Object;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.Scanner;
-import java.util.StringTokenizer;
-
-import Borrow.Group;
 
 public class ObjectManager {
 
-	private int ballCount = 5;
+	private int ballCount = 10;
 	private int airpumpCount = 5;
-	private int tableCount = 5;
-	private int tentCount = 5;
+	private int tableCount = 6;
+	private int tentCount = 3;
 
 	private ArrayList<Ball> balllist = new ArrayList<Ball>();
 	private ArrayList<AirPump> airpumplist = new ArrayList<AirPump>();
@@ -100,9 +97,8 @@ public class ObjectManager {
 		System.out.println("|                                          |");
 		System.out.println("--------------------------------------------");
 
-
 		String Name = sc.next();
-		
+
 		System.out.println("-------------본인의 정보를 입력하세요.-------------");
 		System.out.println("|                                          |");
 		System.out.println("|             전화번호를 입력해주세요             |");
@@ -110,7 +106,7 @@ public class ObjectManager {
 		System.out.println("|         ex)     01012345678              |");
 		System.out.println("|                                          |");
 		System.out.println("--------------------------------------------");
-		
+
 		String PhoneNumber = sc.next();
 
 		switch (N) {
@@ -208,9 +204,8 @@ public class ObjectManager {
 		System.out.println("|                                          |");
 		System.out.println("--------------------------------------------");
 
-
 		String Name = sc.next();
-		
+
 		System.out.println("-------------본인의 정보를 입력하세요.-------------");
 		System.out.println("|                                          |");
 		System.out.println("|             전화번호를 입력해주세요             |");
@@ -218,7 +213,7 @@ public class ObjectManager {
 		System.out.println("|         ex)     01012345678              |");
 		System.out.println("|                                          |");
 		System.out.println("--------------------------------------------");
-		
+
 		String PhoneNumber = sc.next();
 
 		switch (N) {
@@ -235,7 +230,6 @@ public class ObjectManager {
 			DeleteTent(PhoneNumber, count);
 			break;
 		}
-
 	}
 
 	public void DeleteBall(String PhoneNumber, int count) {

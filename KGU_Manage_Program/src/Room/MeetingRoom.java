@@ -9,10 +9,6 @@ import Borrow.Group;
 public class MeetingRoom extends Room {
 
 	private HashMap<Group, Integer> hashmap = new HashMap<>();
-	boolean havingComputer;
-	boolean isUnderground;
-	int roomNum;
-	boolean isUsed;
 
 	private boolean timeTable[][] = new boolean[6][7];
 
@@ -172,7 +168,6 @@ public class MeetingRoom extends Room {
 				showTimeTable();
 				break;
 			}
-
 		}
 	}
 
