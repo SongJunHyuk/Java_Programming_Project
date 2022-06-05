@@ -51,6 +51,7 @@ public class SelectPage {
 			break;
 		case 1:
 			BasketBallCourt.getInstance().showTimeTable();
+			MainPage.FirstStep();
 			break;
 		case 2:
 			Playground.getInstance().showTimeTable();

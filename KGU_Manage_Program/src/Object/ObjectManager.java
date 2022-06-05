@@ -41,7 +41,7 @@ public class ObjectManager {
 		System.out.println("|        3. 테이블                           |");
 		System.out.println("|        4. 텐트                            |");
 		System.out.println("|                                          |");
-		System.out.println("--------------------------------------------");
+		System.out.println("-------------------------------------------");
 		Scanner sc = new Scanner(System.in);
 		int N = sc.nextInt();
 		
@@ -49,7 +49,7 @@ public class ObjectManager {
 		System.out.println("|                                          |");
 		System.out.println("|        대여할 개수를 입력하세요.                 |");
 		System.out.println("|                                          |");
-		System.out.println("--------------------------------------------");
+		System.out.println("-------------------------------------------");
 		
 		int count = sc.nextInt();
 		
@@ -81,7 +81,6 @@ public class ObjectManager {
 			break;
 		case 4 :
 			break;
-			
 	}
 
 	public boolean check() {
