@@ -56,6 +56,7 @@ public class BorrowPage {
 			break;
 		case 2:
 			BasketBallCourt.getInstance().selectTimetable();
+			MainPage.FirstStep();
 			break;
 
 		}

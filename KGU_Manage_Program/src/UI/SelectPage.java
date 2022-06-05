@@ -41,7 +41,7 @@ public class SelectPage {
 		Scanner sc = new Scanner(System.in);
 		System.out.println("--------------조회할 장소를 선택하세요------------");
 		System.out.println("|                                          |");
-		System.out.println("|0.뒤로가기     1.농구장          2.축구장       |");
+		System.out.println("|0.뒤로가기     1.축구장          2.농구장       |");
 		System.out.println("|                                          |");
 		System.out.println("--------------------------------------------");
 		int N = sc.nextInt();
@@ -52,11 +52,11 @@ public class SelectPage {
 			Select();
 			break;
 		case 1:
-			BasketBallCourt.getInstance().showTimeTable();
+			Playground.getInstance().showTimeTable();
 			MainPage.FirstStep();
 			break;
 		case 2:
-			Playground.getInstance().showTimeTable();
+			BasketBallCourt.getInstance().showTimeTable();
 			MainPage.FirstStep();
 			break;
 		}
