@@ -1,8 +1,13 @@
 package Object;
 
-public class Object {
+public class Table extends Object {
 	private int quantity;
 	private String Number;
+
+	Table(int quantity, String num) {
+		this.quantity = quantity;
+		this.Number = num;
+	}
 
 	public void setQuantity(int num) {
 		this.quantity = num;
