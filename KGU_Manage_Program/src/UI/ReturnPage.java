@@ -66,13 +66,8 @@ public class ReturnPage {
 		switch (N) {
 		case 0: MainPage.FirstStep();
 			break;
-		case 1: ReturnObject();
+		case 1: SelectReturnClassRoom();
 			break;
-		case 2: 
-			break;
-		case 3: selectReturnRoom();
-			break;
-		
 		}
 	}
 	
@@ -81,7 +76,7 @@ public class ReturnPage {
 		Scanner sc = new Scanner(System.in);
 		System.out.println("--------------------------------------------");
 		System.out.println("|                                           |");
-		System.out.println("|    본인의 이름과 전화번호와 반납할 물건울 입력하세요   |");
+		System.out.println("|    본인의 이름과 전화번호와 반납할 물건울 입력하세요 |");
 		System.out.println("|                                           |");
 		System.out.println("|    ex) 홍길동 01012345678    100            |");
 		System.out.println("|                                           |");
@@ -95,8 +90,9 @@ public class ReturnPage {
 		st.nextToken(); // 수정예정
 	}
 	
-	public static void selectReturnRoom()
-	{
+	public static void SelectReturnClassRoom()	{
 		
 	}
+	
+
 }
